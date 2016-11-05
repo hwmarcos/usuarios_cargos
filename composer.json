@@ -1,0 +1,20 @@
+{
+    "name": "hwmarcos/usuarios_cargos",
+    "description": "Pacote de teste para usuários e cargos",
+    "authors": [
+        {
+            "name": "Helder Willian",
+            "email": "helderwmarcos@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":{
+        "classmap": [
+            "src/migrations/"
+        ],
+        "psr-4":{
+            "Helderwmarcos\\Interbits\\":"src/"
+        }
+    }
+}
