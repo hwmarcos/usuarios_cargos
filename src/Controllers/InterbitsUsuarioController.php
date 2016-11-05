@@ -46,7 +46,7 @@ class InterbitsUsuarioController extends Controller
             $usuarios = InterbitsUsuario::where($where)->paginate(10);
         }
         if (count($usuarios)) {
-            return view('usuario.index', compact('usuarios'));
+            return view('interbits::usuario.index', compact('usuarios'));
         } else {
             return redirect('interbits/usuarios')->with('error', 'Nenhum registro encontrado.');
         }
@@ -187,7 +187,7 @@ class InterbitsUsuarioController extends Controller
         $this->validatePassword($request);
         $data = $this->prepareData($request->all());
         InterbitsUsuario::create($data);
-        redirect('interbits/usuarios')->with('success', 'Dados salvos com sucesso.');
+        return redirect('interbits/usuarios')->with('success', 'Dados salvos com sucesso.');
     }
 
     /**
@@ -221,8 +221,11 @@ class InterbitsUsuarioController extends Controller
     private function cargos()
     {
         $cargos = InterbitsCargo::orderby('nome', 'asc')->get();
-        foreach ($cargos as $cargo) {
-            $data[$cargo->id] = $cargo->nome;
+        $data = [];
+        if (count($cargos) > 0) {
+            foreach ($cargos as $cargo) {
+                $data[$cargo->id] = $cargo->nome;
+            }
         }
         return $data;
     }

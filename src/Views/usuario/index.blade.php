@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-md-3 form-group">
                             <label for="celular">Celular:</label>
-                            <input type="text" name="celular" class="form-control" id="celular">
+                            <input type="text" name="celular" class="form-control" id="celular" maxlength="9">
                         </div>
                         <div class="col-md-3 form-group" style="margin-top:25px;">
                             <button type="submit" class="btn btn-block btn-default">
@@ -36,7 +36,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Usuários</div>
             <div class="panel-body">
-                @if(count($usuarios) > 0){
+                @if(count($usuarios) > 0)
                 <table class="table table-striped table-hover table-condensed">
                     <thead>
                     <tr>

@@ -34,7 +34,11 @@
                 <label for="cargo_id">Função:</label>
                 <select name="cargo_id" id="cargo_id" class="form-control">
                     @foreach($cargos as $cargo_id => $cargo)
-                        <option value="{{$cargo_id}}">{{$cargo}}</option>
+                        @if(isset($usuario->cargo_id) && $usuario->cargo_id == $cargo_id)
+                            <option value="{{$cargo_id}}" selected>{{$cargo}}</option>
+                        @else
+                            <option value="{{$cargo_id}}">{{$cargo}}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>

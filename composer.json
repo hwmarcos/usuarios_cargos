@@ -11,7 +11,7 @@
     "require": {},
     "autoload":{
         "classmap": [
-            "src/migrations/"
+            "src/migrations"
         ],
         "psr-4":{
             "Helderwmarcos\\Interbits\\":"src/"

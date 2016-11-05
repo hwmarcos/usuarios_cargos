@@ -29,7 +29,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Funções</div>
             <div class="panel-body">
-                @if(count($cargos) > 0){
+                @if(count($cargos) > 0)
                 <table class="table table-striped table-hover table-condensed">
                     <thead>
                     <tr>
